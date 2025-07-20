@@ -16,7 +16,7 @@ void loop()
     sensorValue = analogRead(A0);
     digitalWrite(12, HIGH);
     Serial.println(sensorValue);
-    if(sensorValue > 341)
+    if(sensorValue > 341 || sensorValue == 0)
     {
       digitalWrite(12, LOW);
       break;
