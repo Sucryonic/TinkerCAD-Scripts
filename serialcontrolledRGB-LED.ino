@@ -50,4 +50,6 @@ void loop()
   analogWrite(13, r);
   analogWrite(12, b);
   analogWrite(11, g);
+  Serial.println("(" + String(r) + ", " + String(g) + ", " + String(b) + ")");
+  Serial.println("Try Again!");
 }
