@@ -7,7 +7,6 @@ void setup()
   Serial.begin(9600);
 }
 
-bool answer;
 int r;
 int g;
 int b;
@@ -15,35 +14,29 @@ int b;
 void loop()
 {
   Serial.println("R(0-255): ");
-  answer = false;
-  while(answer == false)
+  while(Serial.available() == 0)
   {
    	if(Serial.available() > 0)
     {
       r = Serial.parseInt(); 
-      answer = true;
     }
   }
   
   Serial.println("G(0-255): ");
-  answer = false;
-  while(answer == false)
+  while(Serial.available() == 0)
   {
    	if(Serial.available() > 0)
     {
       g = Serial.parseInt(); 
-      answer = true;
     }
   }
   
   Serial.println("B(0-255): ");
-  answer = false;
-  while(answer == false)
+  while(Serial.available() == 0)
   {
    	if(Serial.available() > 0)
     {
       b = Serial.parseInt(); 
-      answer = true;
     }
   }
   
