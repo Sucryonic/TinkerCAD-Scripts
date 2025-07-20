@@ -11,17 +11,20 @@ void setup()
 void loop()
 {
   int sensorValue = analogRead(A0); 
-  while(sensorValue != 0)
+  if(sensorValue <= 341)
   {
-    if(sensorValue < 341)
-    {
-      digitalWrite(12, HIGH);
-    }else if(sensorValue < 682)
-    {
-      digitalWrite(10, HIGH);
-    }else if(sensorValue < 1023);
-    {
-      digitalWrite(11, HIGH);
-    }
+  	digitalWrite(12, HIGH);
+    delay(100);
   }
+  else if(sensorValue <= 682 && sensorValue > 341)
+  {
+    digitalWrite(10, HIGH);
+    delay(100);
+  }
+  else if(sensorValue <= 1023 && sensorValue > 682);
+  {
+    digitalWrite(11, HIGH);
+    delay(100);
+  }
+  Serial.println(sensorValue);
 }
